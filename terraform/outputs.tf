@@ -1,5 +1,5 @@
 output "function_uri_node" {
-	value = module.node_function.function_url
+	value = module.node_function_main
 }
 
 output "function_uri_python" {

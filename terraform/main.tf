@@ -6,24 +6,25 @@ provider "google" {
 
 ## Enable API
 
-
-module "node_function" {
-  source               = "./modules/functions"
-  project              = var.project
-  function_name        = "node-sample-wh"
-  function_entry_point = "main"
-  sourcefn               = "node-function-sample"
-  runtime              = "nodejs16"
-}
-
 module "python_function_main" {
   source               = "./modules/functions"
   project              = var.project
   function_name        = "python-sample-wh"
   function_entry_point = "main"
-  sourcefn               = "python-function-sample"
-  runtime              = "python310"
+  sourcefn             = "python-function-sample"
+  runtimefn              = "python310"
 }
+
+module "node_function_main" {
+  source               = "./modules/functions"
+  project              = var.project
+  function_name        = "node-sample-wh"
+  function_entry_point = "hospitalityMainWH"
+  sourcefn             = "node-function-sample"
+  runtimefn              = "nodejs16"
+}
+
+
      
 module "secrets" {
   source               = "./modules/secrets"

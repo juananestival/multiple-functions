@@ -1,6 +1,6 @@
 
 variable "project" {
-	default = "hospitality-demo-361210"
+	default = "salesforce-cf"
 }
 variable "region" {
 	default = "us-central1" # Choose a region

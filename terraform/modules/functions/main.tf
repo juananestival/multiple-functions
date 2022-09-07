@@ -45,7 +45,7 @@ resource "google_project_service" "cb" {
 # Create Main tree Cloud Function
 resource "google_cloudfunctions_function" "function" {
   name    = var.function_name
-  runtime = var.runtime # Switch to a different runtime if needed
+  runtime = var.runtimefn # Switch to a different runtime if needed
   available_memory_mb   = 256
   timeout               = 60
   source_archive_bucket = google_storage_bucket.bucket.name
