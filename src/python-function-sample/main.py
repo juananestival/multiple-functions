@@ -14,21 +14,31 @@ def main(initial_request):
     try:
 
         request_json = initial_request.get_json()
-
         print("main - print: {}".format(request_json))
     
-
         #retrieve salesforce session and instance reference
         session_id, instance = sf_login()
         tag = request_json['fulfillmentInfo']['tag']
         print("tag : {}".format(tag))
         print(tag)
+
+        if tag == 'phoneLookup':
+            print("Tag flow for: {tag}")
+        else:
+            print("Else: ")
+
+
+
+
+        # Check sf_request
+        tag = request_json['fulfillmentInfo']['tag']
+
+
         msg = 'hola'
         WebhookResponse=answer_webhook(msg)
         return WebhookResponse
 
      
-
         """
         record = SFType(sftype_object,session_id,instance)
 
